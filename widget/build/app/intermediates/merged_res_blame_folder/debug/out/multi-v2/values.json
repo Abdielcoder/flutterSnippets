@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/abdiels/StudioProjects/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/abdiels/StudioProjects/learnFlutter/widget/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/abdiels/StudioProjects/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/abdiels/StudioProjects/learnFlutter/widget/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
