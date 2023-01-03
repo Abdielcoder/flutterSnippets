@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Welcome to Flutter',
       //home: ListView2Screen(),
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes
+      routes: AppRoutes.getAppRoutes(),//All routes
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'package:components/models/menu_option.dart';
+import 'package:components/router/app_routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,13 +20,14 @@ class HomeScreen extends StatelessWidget {
         ),
         body:  ListView.separated(
             separatorBuilder: (context, index) => const Divider(),
-            itemCount: 10,
-            itemBuilder: (_, __) =>   ListTile(
-                    leading:  const Icon(Icons.rocket),
-                    title:    const Text('Ti tulo de prueba'),
+            itemCount: AppRoutes.menuOptions.length,
+            itemBuilder: (context, index) =>   ListTile(
+                    leading:  Icon(AppRoutes.menuOptions[index].icon),
+                    title:    Text(AppRoutes.menuOptions[index].name),
                     trailing: const  Icon(Icons.arrow_forward),
                     onTap: () {
-                      Navigator.pushNamed(context, 'listPage1');
+                      //Iterate de list of Routes
+                      Navigator.of(context, rootNavigator: true).pushNamed(AppRoutes.menuOptions[index].route);
                     },
         ),
       ),
