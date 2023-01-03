@@ -1,5 +1,5 @@
-import 'package:components/models/menu_option.dart';
 import 'package:components/router/app_routes.dart';
+import 'package:components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,16 +13,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Home Screen',style: TextStyle(color: Colors.yellow),),
-          backgroundColor: Colors.black,
+          title: const Text('Home Screen'),
+
         ),
         body:  ListView.separated(
             separatorBuilder: (context, index) => const Divider(),
             itemCount: AppRoutes.menuOptions.length,
             itemBuilder: (context, index) =>   ListTile(
-                    leading:  Icon(AppRoutes.menuOptions[index].icon),
+                    leading:  Icon(AppRoutes.menuOptions[index].icon,color: AppTheme.primary),
                     title:    Text(AppRoutes.menuOptions[index].name),
                     trailing: const  Icon(Icons.arrow_forward),
                     onTap: () {

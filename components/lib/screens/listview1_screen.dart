@@ -1,4 +1,5 @@
 
+import 'package:components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class ListView1Screen extends StatelessWidget{
@@ -12,7 +13,7 @@ class ListView1Screen extends StatelessWidget{
       body:  Center(
         child: ListView(children:  [
           ...books.map((titles) =>  ListTile(
-               leading: const Icon(Icons.account_circle_sharp),
+               leading: const Icon(Icons.account_circle_sharp,color: AppTheme.primary,),
                title: Text(titles),
                 trailing: const Icon(Icons.arrow_forward_ios_outlined),
              )

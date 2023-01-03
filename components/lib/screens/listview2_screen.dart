@@ -1,4 +1,5 @@
 
+import 'package:components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class ListView2Screen extends StatelessWidget{
@@ -9,13 +10,15 @@ class ListView2Screen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(title: const Text('List Items',style: TextStyle(color: Colors.yellow ),),
-      backgroundColor: Colors.black,),
+      appBar: AppBar(
+        title: const Text(
+          'List Items',),
+     ),
       body:  Center(
         child: ListView.separated(//List
            // itemBuilder: (context, index) => Text('${books[index]}' ),
               itemBuilder: (context, index) => ListTile(
-              leading: const Icon(Icons.smart_display),//First Icon
+              leading: const Icon(Icons.smart_display, color: AppTheme.primary,),//First Icon
               title: Text(movies[index]),//Iterate list
               trailing: const Icon(Icons.arrow_forward_ios_outlined),//Last Icon
               onTap: () =>{},
