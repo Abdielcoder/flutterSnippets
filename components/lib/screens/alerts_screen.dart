@@ -1,5 +1,6 @@
 
 import 'package:components/theme/app_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AlertsScreens extends StatelessWidget{
@@ -7,7 +8,31 @@ class AlertsScreens extends StatelessWidget{
   final books = const['Poder sin Limites','El poder Del Ahora','Harry potter','Moby-Dick'];
 
   //Function IOS Alert
-   void displayDialogIos(){}
+   void displayDialogIos(BuildContext context){
+     showCupertinoDialog(context: context,
+         builder: (context){
+      return CupertinoAlertDialog(
+        title: const Text('Titulo'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const[
+            Text('This is an Alert'),
+            SizedBox(height: 10,),
+            FlutterLogo(size: 100)
+          ],
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel',
+            style: TextStyle( color: Colors.red)
+           )),
+          TextButton(onPressed: () => Navigator.pop(context), child: Text('Ok'))
+        ],
+      );
+     }
+
+     );
+   }
 
   //Function Android Alert
   void displayDialog(BuildContext context){
@@ -19,7 +44,7 @@ class AlertsScreens extends StatelessWidget{
             title: const Text('Titulo'),
             content: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: const[
                 Text('This is an Alert'),
                 SizedBox(height: 10,),
                 FlutterLogo(size: 100)
@@ -42,7 +67,7 @@ class AlertsScreens extends StatelessWidget{
           padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           child:  Text('Mostrar Alerta'),
         ),
-        onPressed: () => displayDialog(context)//When button set to null the button appear disabled
+        onPressed: () => displayDialogIos(context)//When button set to null the button appear disabled
         )
       ) ,
       floatingActionButton: FloatingActionButton(
