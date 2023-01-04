@@ -10,6 +10,8 @@ class AppRoutes{
     MenuOption(route:'HomePage' ,icon: Icons.cottage ,name: 'Home Screen' ,screen:HomeScreen()),
     MenuOption(route:'listPage1' ,icon: Icons.list ,name: 'Books' ,screen:ListView1Screen()),
     MenuOption(route:'listPage2' ,icon: Icons.toc ,name: 'Movies' ,screen:ListView2Screen()),
+    MenuOption(route:'alerts' ,icon: Icons.notifications_active ,name: 'Alerts - Alertas' ,screen:AlertsScreens()),
+    MenuOption(route:'cards' ,icon: Icons.style ,name: 'Cards -  Tarjetas' ,screen:CardsScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes(){//Strint and Widget
