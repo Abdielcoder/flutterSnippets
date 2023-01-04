@@ -1,34 +1,49 @@
 import 'package:components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class CustomCardType1 extends StatelessWidget {
-  const CustomCardType1({
-    Key? key,
+class CustomCardType2 extends StatelessWidget {
+  final String url;
+  final String? name;
+  const CustomCardType2({
+    Key? key, required this.url, this.name,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.antiAlias,//Rounded top card cornes
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20)
+      ),
+      elevation: 30,
+      shadowColor: AppTheme.primary.withOpacity(0.6),
       child: Column(
-        children:  [
-         const ListTile(
-            leading: Icon(Icons.photo_album, color: AppTheme.primary),
-            title: Text('Ejemplo de tarjeta'),
-            subtitle: Text('Texto de prueba para la tarjeta recien creado, para '
-                'poder ubicar dimensiones tanto delo alto como de lo ancho, tambien'
-                'como el aspecto final de la tarjeta'),
+        children:    [
+           FadeInImage(image: NetworkImage(url),
+            placeholder: AssetImage('assets/images/loader.gif'),
+          width: double.infinity,
+          height: 230,
+          fit: BoxFit.cover,
+          fadeInDuration: Duration(milliseconds: 3000),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(onPressed: (){}, child: Text('Cancel')),
-
-                 TextButton(onPressed: (){}, child: Text('Ok')),
-              ],
-            ),
-          )
+          if(name != null)
+            Container(
+              //Alignament to left
+              alignment: AlignmentDirectional.centerEnd,
+              padding: const EdgeInsets.only(right: 20,top: 10,bottom: 10),
+              child: Text(name!),
+            )
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.end,
+          //     children: [
+          //       TextButton(onPressed: (){}, child: Text('Cancel')),
+          //
+          //        TextButton(onPressed: (){}, child: Text('Ok')),
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
