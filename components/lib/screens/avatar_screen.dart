@@ -10,7 +10,7 @@ class AvatarScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Stan Lee'),
         actions: [
-          Container(
+          Container(//Actions can containe especial functions
             margin: const EdgeInsets.only( right: 5),
             child: CircleAvatar(
                 child: const Text('SL'),
