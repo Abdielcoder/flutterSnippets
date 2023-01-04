@@ -24,6 +24,9 @@ class AppTheme{
             shape: const StadiumBorder(),
             elevation: 0
           )
+        ),
+        dialogTheme: DialogTheme(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))
         )
       );
 
