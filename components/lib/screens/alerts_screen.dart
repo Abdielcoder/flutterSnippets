@@ -9,23 +9,26 @@ class AlertsScreens extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(title: const Text('List Items'),),
+    //  appBar: AppBar(title: const Text('List Items'),),
       body:  Center(
-        child: ListView(children:  [
-          ...books.map((titles) =>  ListTile(
-               leading: const Icon(Icons.account_circle_sharp,color: AppTheme.primary,),
-               title: Text(titles),
-                trailing: const Icon(Icons.arrow_forward_ios_outlined),
-             )
-          ).toList()
+       child: ElevatedButton(
+        child: const Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          child:  Text('Mostrar Alerta'),
+        ),
+        onPressed: (){
 
-         // ListTile(
-         //   leading: Icon(Icons.account_circle_sharp),
-         //   title: Text('sdf'),
-         // )
-        ],)
+        }, //When button set to null the button appear disabled
+        )
+      ) ,
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.crisis_alert_rounded),
+        onPressed: (){
+          Navigator.pop(context);
+        },
       ),
-    );
+        );
+
   }
 
 }
